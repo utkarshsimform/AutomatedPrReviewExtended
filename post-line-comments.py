@@ -56,6 +56,8 @@ def get_diff_positions():
 # Map file lines to diff positions
 diff_positions = get_diff_positions()
 
+print("Debug: diff_positions mapping:", json.dumps(diff_positions, indent=2))
+
 for comment in feedback:
     file_path = comment["path"]
     line_number = comment["line"]
