@@ -68,7 +68,7 @@ def get_diff_positions():
     return diff_positions
 
 def get_changed_files_and_lines(base_branch, pr_branch):
-    """Return a dict of changed files and their changed line numbers."""
+    """Return a dict of changed .cs files and their changed line numbers."""
     diff_output = subprocess.check_output([
         'git', 'diff', '--unified=0', f'origin/{base_branch}...origin/{pr_branch}'
     ]).decode('utf-8')
@@ -78,8 +78,12 @@ def get_changed_files_and_lines(base_branch, pr_branch):
     for line in diff_output.splitlines():
         if line.startswith('+++ b/'):
             current_file = line[6:]
+            # Only include .cs files
+            if not current_file.endswith('.cs'):
+                current_file = None
+                continue
             changed[current_file] = set()
-        elif line.startswith('@@'):
+        elif line.startswith('@@') and current_file:
             m = re.search(r'\+([0-9]+)(?:,([0-9]+))?', line)
             if m:
                 new_line = int(m.group(1))
@@ -87,12 +91,10 @@ def get_changed_files_and_lines(base_branch, pr_branch):
                 for i in range(count):
                     changed[current_file].add(new_line + i)
         elif line.startswith('+') and not line.startswith('+++') and current_file and new_line:
-            # Only add lines that are additions
             changed[current_file].add(new_line)
             new_line += 1
         elif not line.startswith('-') and not line.startswith('@@') and current_file and new_line:
             new_line += 1
-    # Remove files with no changed lines
     changed = {f: sorted(list(lines)) for f, lines in changed.items() if lines}
     return changed
 
