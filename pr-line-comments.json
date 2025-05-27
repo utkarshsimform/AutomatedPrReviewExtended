@@ -1,0 +1,14 @@
+[
+  {
+    "path": "AutomatedPRReviewExtended/Demo2.cs",
+    "line": 17,
+    "body": "Consider adding logging or rethrowing the exception in the catch block.",
+    "side": "RIGHT"
+  },
+  {
+    "path": "AutomatedPRReviewExtended/Demo2.cs",
+    "line": 7,
+    "body": "Method name should be PascalCase (AddNumbers).",
+    "side": "RIGHT"
+  }
+]
