@@ -1,14 +1,1 @@
-[
-  {
-    "path": "AutomatedPRReviewExtended/Demo1.cs",
-    "line": 17,
-    "body": "Automated review: Please check this change on line 17 of AutomatedPRReviewExtended/Demo1.cs.",
-    "side": "RIGHT"
-  },
-  {
-    "path": "AutomatedPRReviewExtended/Demo1.cs",
-    "line": 18,
-    "body": "Automated review: Please check this change on line 18 of AutomatedPRReviewExtended/Demo1.cs.",
-    "side": "RIGHT"
-  }
-]
+[]
