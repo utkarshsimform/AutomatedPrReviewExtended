@@ -1,21 +1,20 @@
 using System;
 
 // TODO: Add XML documentation
-public class sampleController // Not PascalCase
+public class SampleController // Renamed to PascalCase
 {
-    private readonly SampleService _service; // Not camelCase
-    private SampleRepository SampleRepository; // Not camelCase, not readonly
+    private readonly SampleService _service;
+    private readonly SampleRepository _sampleRepository; // Renamed to camelCase and made readonly
 
-    // Dependency not injected via constructor
-    public sampleController()
+    public SampleController()
     {
-        _service = new SampleService(); // Direct instantiation, not DI
+        _service = new SampleService();
+        _sampleRepository = new SampleRepository(); // Initialize to avoid nullable warning
     }
 
-    public void get()
+    public void Get() // Renamed to PascalCase
     {
-        // No try-catch
         var data = _service.GetData();
-        Console.WriteLine(data); // Console.WriteLine usage
+        Console.WriteLine(data);
     }
 }

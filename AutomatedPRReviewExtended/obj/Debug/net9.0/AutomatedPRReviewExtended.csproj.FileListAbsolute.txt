@@ -1,0 +1,16 @@
+C:\MyProjects\POC\AutomatedPRReviewExtended\AutomatedPRReviewExtended\bin\Debug\net9.0\pr-review-instructions.md
+C:\MyProjects\POC\AutomatedPRReviewExtended\AutomatedPRReviewExtended\bin\Debug\net9.0\AutomatedPRReviewExtended.exe
+C:\MyProjects\POC\AutomatedPRReviewExtended\AutomatedPRReviewExtended\bin\Debug\net9.0\AutomatedPRReviewExtended.deps.json
+C:\MyProjects\POC\AutomatedPRReviewExtended\AutomatedPRReviewExtended\bin\Debug\net9.0\AutomatedPRReviewExtended.runtimeconfig.json
+C:\MyProjects\POC\AutomatedPRReviewExtended\AutomatedPRReviewExtended\bin\Debug\net9.0\AutomatedPRReviewExtended.dll
+C:\MyProjects\POC\AutomatedPRReviewExtended\AutomatedPRReviewExtended\bin\Debug\net9.0\AutomatedPRReviewExtended.pdb
+C:\MyProjects\POC\AutomatedPRReviewExtended\AutomatedPRReviewExtended\obj\Debug\net9.0\AutomatedPRReviewExtended.GeneratedMSBuildEditorConfig.editorconfig
+C:\MyProjects\POC\AutomatedPRReviewExtended\AutomatedPRReviewExtended\obj\Debug\net9.0\AutomatedPRReviewExtended.AssemblyInfoInputs.cache
+C:\MyProjects\POC\AutomatedPRReviewExtended\AutomatedPRReviewExtended\obj\Debug\net9.0\AutomatedPRReviewExtended.AssemblyInfo.cs
+C:\MyProjects\POC\AutomatedPRReviewExtended\AutomatedPRReviewExtended\obj\Debug\net9.0\AutomatedPRReviewExtended.csproj.CoreCompileInputs.cache
+C:\MyProjects\POC\AutomatedPRReviewExtended\AutomatedPRReviewExtended\obj\Debug\net9.0\AutomatedPRReviewExtended.sourcelink.json
+C:\MyProjects\POC\AutomatedPRReviewExtended\AutomatedPRReviewExtended\obj\Debug\net9.0\AutomatedPRReviewExtended.dll
+C:\MyProjects\POC\AutomatedPRReviewExtended\AutomatedPRReviewExtended\obj\Debug\net9.0\refint\AutomatedPRReviewExtended.dll
+C:\MyProjects\POC\AutomatedPRReviewExtended\AutomatedPRReviewExtended\obj\Debug\net9.0\AutomatedPRReviewExtended.pdb
+C:\MyProjects\POC\AutomatedPRReviewExtended\AutomatedPRReviewExtended\obj\Debug\net9.0\AutomatedPRReviewExtended.genruntimeconfig.cache
+C:\MyProjects\POC\AutomatedPRReviewExtended\AutomatedPRReviewExtended\obj\Debug\net9.0\ref\AutomatedPRReviewExtended.dll

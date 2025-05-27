@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\MyProjects\\POC\\AutomatedPRReview\\AutomatedPRReview\\AutomatedPRReview.csproj",
-      "projectName": "AutomatedPRReview",
-      "projectPath": "C:\\MyProjects\\POC\\AutomatedPRReview\\AutomatedPRReview\\AutomatedPRReview.csproj",
+      "projectUniqueName": "C:\\MyProjects\\POC\\AutomatedPRReviewExtended\\AutomatedPRReviewExtended\\AutomatedPRReviewExtended.csproj",
+      "projectName": "AutomatedPRReviewExtended",
+      "projectPath": "C:\\MyProjects\\POC\\AutomatedPRReviewExtended\\AutomatedPRReviewExtended\\AutomatedPRReviewExtended.csproj",
       "packagesPath": "C:\\Users\\utkarsh\\.nuget\\packages\\",
-      "outputPath": "C:\\MyProjects\\POC\\AutomatedPRReview\\AutomatedPRReview\\obj\\",
+      "outputPath": "C:\\MyProjects\\POC\\AutomatedPRReviewExtended\\AutomatedPRReviewExtended\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
