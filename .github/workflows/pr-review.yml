@@ -29,3 +29,11 @@ jobs:
         with:
           issue-number: ${{ github.event.pull_request.number }}
           body-file: pr-comment.txt
+      - name: Post line-level PR comments
+        run: |
+          python post-line-comments.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          GITHUB_SHA: ${{ github.event.pull_request.head.sha }}
