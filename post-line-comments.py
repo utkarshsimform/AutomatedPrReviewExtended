@@ -102,21 +102,34 @@ def get_pr_head_sha(pr_branch):
     sha = subprocess.check_output(['git', 'rev-parse', f'origin/{pr_branch}']).decode('utf-8').strip()
     return sha
 
+def analyze_line_for_comment(line_content):
+    # Only comment if line contains TODO or looks like commented-out code
+    if 'TODO' in line_content or (line_content.strip().startswith('//') and ';' in line_content):
+        return True
+    return False
+
 # Example usage to generate pr-line-comments.json dynamically
 if __name__ == "__main__":
     base_branch = 'master'
     pr_branch = 'feature1'
-    pr_head_sha = get_pr_head_sha(pr_branch)
     changed = get_changed_files_and_lines(base_branch, pr_branch)
     comments = []
     for file, lines in changed.items():
+        if not os.path.exists(file):
+            continue
+        with open(file, 'r', encoding='utf-8') as f:
+            file_lines = f.readlines()
         for line in lines:
-            comments.append({
-                "path": file,
-                "line": line,
-                "body": f"Automated review: Please check this change on line {line} of {file}.",
-                "side": "RIGHT"
-            })
+            # line numbers are 1-based
+            if line <= len(file_lines):
+                content = file_lines[line-1]
+                if analyze_line_for_comment(content):
+                    comments.append({
+                        "path": file,
+                        "line": line,
+                        "body": f"Automated review: Please check this line: {content.strip()}",
+                        "side": "RIGHT"
+                    })
     with open('pr-line-comments.json', 'w', encoding='utf-8') as f:
         json.dump(comments, f, indent=2)
     print(f"Generated pr-line-comments.json for {len(comments)} comments.")
