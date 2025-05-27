@@ -117,24 +117,20 @@ if __name__ == "__main__":
     print(f"Generated pr-line-comments.json for {len(comments)} comments.")
 
 # Map file lines to diff positions
-diff_positions = get_diff_positions()
 
+diff_positions = get_diff_positions()
 print("Debug: diff_positions mapping:", json.dumps(diff_positions, indent=2))
 
-for comment in feedback:
-    file_path = comment["path"]
-    line_number = comment["line"]
-
-    if file_path in diff_positions and line_number in diff_positions[file_path]:
+# Only comment on lines that are actually in the diff
+for file_path, line_map in diff_positions.items():
+    for line_number, position in line_map.items():
         data = {
-            "body": comment["body"],
+            "body": f"Automated review: Please check this change on line {line_number} of {file_path}.",
             "commit_id": GITHUB_SHA,
             "path": file_path,
-            "position": diff_positions[file_path][line_number]
+            "position": position
         }
         response = requests.post(api_url, headers=headers, data=json.dumps(data))
         print(f"Comment on {file_path}:{line_number} - Status: {response.status_code}")
         if response.status_code >= 300:
             print(response.text)
-    else:
-        print(f"Skipping comment on {file_path}:{line_number} - Not in diff.")
