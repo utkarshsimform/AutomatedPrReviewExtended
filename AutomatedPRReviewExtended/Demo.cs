@@ -8,6 +8,7 @@ public class Demo // Renamed to PascalCase
     {
         string message = ""; // Renamed to camelCase and initialized
         Console.WriteLine(message); // Removed possible null dereference
+        Console.WriteLine("This is a new line for PR line comment detection.");
         // int x = 5;
     }
 }
