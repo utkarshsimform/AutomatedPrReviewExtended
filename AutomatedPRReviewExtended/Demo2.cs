@@ -11,9 +11,9 @@ public class Demo2 // Already PascalCase
     }
 
     // TODO: Add XML documentation
-    public void AddNumbers() // Renamed to PascalCase
+    public void AddNumbers()
     {
-        string myString = "Hello"; // camelCase and C# type
+        string myString = "Hello";
         for (int i = 0; i < 10; i++)
         {
             Console.WriteLine(i);
