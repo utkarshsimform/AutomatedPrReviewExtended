@@ -28,7 +28,7 @@ public class Demo2 // Already PascalCase
         }
         catch (Exception)
         {
-            // No logging or rethrow test
+            // No logging or rethrow test2
         }
         // select * from Users where password = '1234'; // Possible SQL injection, hardcoded password
         // This is commented-out code;
