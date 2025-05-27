@@ -33,4 +33,10 @@ public class Demo2 // Already PascalCase
         // select * from Users where password = '1234'; // Possible SQL injection, hardcoded password
         // This is commented-out code;
     }
+
+    // Added a new method for demonstration purposes
+    public void NewMethod()
+    {
+        Console.WriteLine("This is a new method for testing line-level comments.");
+    }
 }
