@@ -98,10 +98,15 @@ def get_changed_files_and_lines(base_branch, pr_branch):
     changed = {f: sorted(list(lines)) for f, lines in changed.items() if lines}
     return changed
 
+def get_pr_head_sha(pr_branch):
+    sha = subprocess.check_output(['git', 'rev-parse', f'origin/{pr_branch}']).decode('utf-8').strip()
+    return sha
+
 # Example usage to generate pr-line-comments.json dynamically
 if __name__ == "__main__":
     base_branch = 'master'
     pr_branch = 'feature1'
+    pr_head_sha = get_pr_head_sha(pr_branch)
     changed = get_changed_files_and_lines(base_branch, pr_branch)
     comments = []
     for file, lines in changed.items():
@@ -126,7 +131,7 @@ for file_path, line_map in diff_positions.items():
     for line_number, position in line_map.items():
         data = {
             "body": f"Automated review: Please check this change on line {line_number} of {file_path}.",
-            "commit_id": GITHUB_SHA,
+            "commit_id": get_pr_head_sha('feature1'),
             "path": file_path,
             "position": position
         }
