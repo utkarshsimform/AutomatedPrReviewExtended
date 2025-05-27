@@ -1,20 +1,212 @@
 [
   {
     "path": "AutomatedPRReviewExtended/Demo2.cs",
-    "line": 17,
-    "body": "Consider adding logging or rethrowing the exception in the catch block.",
+    "line": 37,
+    "body": "Automated review: Please check this change on line 37 of AutomatedPRReviewExtended/Demo2.cs.",
     "side": "RIGHT"
   },
   {
     "path": "AutomatedPRReviewExtended/Demo2.cs",
-    "line": 7,
-    "body": "Method name should be PascalCase (AddNumbers).",
+    "line": 41,
+    "body": "Automated review: Please check this change on line 41 of AutomatedPRReviewExtended/Demo2.cs.",
+    "side": "RIGHT"
+  },
+  {
+    "path": "AutomatedPRReviewExtended/Demo2.cs",
+    "line": 42,
+    "body": "Automated review: Please check this change on line 42 of AutomatedPRReviewExtended/Demo2.cs.",
+    "side": "RIGHT"
+  },
+  {
+    "path": "AutomatedPRReviewExtended/Demo2.cs",
+    "line": 43,
+    "body": "Automated review: Please check this change on line 43 of AutomatedPRReviewExtended/Demo2.cs.",
+    "side": "RIGHT"
+  },
+  {
+    "path": "AutomatedPRReviewExtended/Demo2.cs",
+    "line": 44,
+    "body": "Automated review: Please check this change on line 44 of AutomatedPRReviewExtended/Demo2.cs.",
     "side": "RIGHT"
   },
   {
     "path": "AutomatedPRReviewExtended/Demo2.cs",
     "line": 45,
-    "body": "This is a test comment for the newly added line to check line-level PR comments.",
+    "body": "Automated review: Please check this change on line 45 of AutomatedPRReviewExtended/Demo2.cs.",
+    "side": "RIGHT"
+  },
+  {
+    "path": "post-line-comments.py",
+    "line": 33,
+    "body": "Automated review: Please check this change on line 33 of post-line-comments.py.",
+    "side": "RIGHT"
+  },
+  {
+    "path": "post-line-comments.py",
+    "line": 34,
+    "body": "Automated review: Please check this change on line 34 of post-line-comments.py.",
+    "side": "RIGHT"
+  },
+  {
+    "path": "post-line-comments.py",
+    "line": 35,
+    "body": "Automated review: Please check this change on line 35 of post-line-comments.py.",
+    "side": "RIGHT"
+  },
+  {
+    "path": "post-line-comments.py",
+    "line": 36,
+    "body": "Automated review: Please check this change on line 36 of post-line-comments.py.",
+    "side": "RIGHT"
+  },
+  {
+    "path": "post-line-comments.py",
+    "line": 39,
+    "body": "Automated review: Please check this change on line 39 of post-line-comments.py.",
+    "side": "RIGHT"
+  },
+  {
+    "path": "post-line-comments.py",
+    "line": 40,
+    "body": "Automated review: Please check this change on line 40 of post-line-comments.py.",
+    "side": "RIGHT"
+  },
+  {
+    "path": "post-line-comments.py",
+    "line": 43,
+    "body": "Automated review: Please check this change on line 43 of post-line-comments.py.",
+    "side": "RIGHT"
+  },
+  {
+    "path": "post-line-comments.py",
+    "line": 44,
+    "body": "Automated review: Please check this change on line 44 of post-line-comments.py.",
+    "side": "RIGHT"
+  },
+  {
+    "path": "post-line-comments.py",
+    "line": 45,
+    "body": "Automated review: Please check this change on line 45 of post-line-comments.py.",
+    "side": "RIGHT"
+  },
+  {
+    "path": "post-line-comments.py",
+    "line": 51,
+    "body": "Automated review: Please check this change on line 51 of post-line-comments.py.",
+    "side": "RIGHT"
+  },
+  {
+    "path": "post-line-comments.py",
+    "line": 53,
+    "body": "Automated review: Please check this change on line 53 of post-line-comments.py.",
+    "side": "RIGHT"
+  },
+  {
+    "path": "post-line-comments.py",
+    "line": 54,
+    "body": "Automated review: Please check this change on line 54 of post-line-comments.py.",
+    "side": "RIGHT"
+  },
+  {
+    "path": "post-line-comments.py",
+    "line": 55,
+    "body": "Automated review: Please check this change on line 55 of post-line-comments.py.",
+    "side": "RIGHT"
+  },
+  {
+    "path": "post-line-comments.py",
+    "line": 56,
+    "body": "Automated review: Please check this change on line 56 of post-line-comments.py.",
+    "side": "RIGHT"
+  },
+  {
+    "path": "post-line-comments.py",
+    "line": 57,
+    "body": "Automated review: Please check this change on line 57 of post-line-comments.py.",
+    "side": "RIGHT"
+  },
+  {
+    "path": "post-line-comments.py",
+    "line": 58,
+    "body": "Automated review: Please check this change on line 58 of post-line-comments.py.",
+    "side": "RIGHT"
+  },
+  {
+    "path": "post-line-comments.py",
+    "line": 59,
+    "body": "Automated review: Please check this change on line 59 of post-line-comments.py.",
+    "side": "RIGHT"
+  },
+  {
+    "path": "post-line-comments.py",
+    "line": 60,
+    "body": "Automated review: Please check this change on line 60 of post-line-comments.py.",
+    "side": "RIGHT"
+  },
+  {
+    "path": "post-line-comments.py",
+    "line": 61,
+    "body": "Automated review: Please check this change on line 61 of post-line-comments.py.",
+    "side": "RIGHT"
+  },
+  {
+    "path": "post-line-comments.py",
+    "line": 62,
+    "body": "Automated review: Please check this change on line 62 of post-line-comments.py.",
+    "side": "RIGHT"
+  },
+  {
+    "path": "post-line-comments.py",
+    "line": 63,
+    "body": "Automated review: Please check this change on line 63 of post-line-comments.py.",
+    "side": "RIGHT"
+  },
+  {
+    "path": "post-line-comments.py",
+    "line": 64,
+    "body": "Automated review: Please check this change on line 64 of post-line-comments.py.",
+    "side": "RIGHT"
+  },
+  {
+    "path": "post-line-comments.py",
+    "line": 65,
+    "body": "Automated review: Please check this change on line 65 of post-line-comments.py.",
+    "side": "RIGHT"
+  },
+  {
+    "path": "pr-line-comments.json",
+    "line": 13,
+    "body": "Automated review: Please check this change on line 13 of pr-line-comments.json.",
+    "side": "RIGHT"
+  },
+  {
+    "path": "pr-line-comments.json",
+    "line": 14,
+    "body": "Automated review: Please check this change on line 14 of pr-line-comments.json.",
+    "side": "RIGHT"
+  },
+  {
+    "path": "pr-line-comments.json",
+    "line": 15,
+    "body": "Automated review: Please check this change on line 15 of pr-line-comments.json.",
+    "side": "RIGHT"
+  },
+  {
+    "path": "pr-line-comments.json",
+    "line": 16,
+    "body": "Automated review: Please check this change on line 16 of pr-line-comments.json.",
+    "side": "RIGHT"
+  },
+  {
+    "path": "pr-line-comments.json",
+    "line": 17,
+    "body": "Automated review: Please check this change on line 17 of pr-line-comments.json.",
+    "side": "RIGHT"
+  },
+  {
+    "path": "pr-line-comments.json",
+    "line": 18,
+    "body": "Automated review: Please check this change on line 18 of pr-line-comments.json.",
     "side": "RIGHT"
   }
 ]
