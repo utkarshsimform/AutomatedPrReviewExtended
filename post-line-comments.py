@@ -30,7 +30,12 @@ headers = {
 
 def get_diff_positions():
     """Parse the PR diff to map file lines to diff positions."""
-    diff_output = subprocess.check_output(['git', 'diff', '--unified=0', f'origin/{GITHUB_PR_NUMBER}']).decode('utf-8')
+    # Ensure the PR branch exists locally
+    pr_branch = f'pull/{GITHUB_PR_NUMBER}/head'
+    subprocess.run(['git', 'fetch', 'origin', pr_branch], check=True)
+
+    # Use the fetched branch for the diff
+    diff_output = subprocess.check_output(['git', 'diff', '--unified=0', f'FETCH_HEAD']).decode('utf-8')
     diff_positions = {}
     current_file = None
 
