@@ -14,6 +14,8 @@ public class demo5
         {
             string message = "Hello, World!";
             Console.WriteLine(message);
+            // Added for PR review detection
+            Console.WriteLine("Automated PR review detection line.");
         }
         catch (Exception ex)
         {

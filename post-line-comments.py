@@ -3,6 +3,7 @@ import json
 import requests
 import sys
 import subprocess
+import re
 
 GITHUB_TOKEN = os.environ.get('GITHUB_TOKEN')
 GITHUB_REPOSITORY = os.environ.get('GITHUB_REPOSITORY')
@@ -65,6 +66,55 @@ def get_diff_positions():
             position += 1
 
     return diff_positions
+
+def get_changed_files_and_lines(base_branch, pr_branch):
+    """Return a dict of changed .cs files and their changed line numbers."""
+    diff_output = subprocess.check_output([
+        'git', 'diff', '--unified=0', f'origin/{base_branch}...origin/{pr_branch}'
+    ]).decode('utf-8')
+    changed = {}
+    current_file = None
+    new_line = None
+    for line in diff_output.splitlines():
+        if line.startswith('+++ b/'):
+            current_file = line[6:]
+            # Only include .cs files
+            if not current_file.endswith('.cs'):
+                current_file = None
+                continue
+            changed[current_file] = set()
+        elif line.startswith('@@') and current_file:
+            m = re.search(r'\+([0-9]+)(?:,([0-9]+))?', line)
+            if m:
+                new_line = int(m.group(1))
+                count = int(m.group(2) or '1')
+                for i in range(count):
+                    changed[current_file].add(new_line + i)
+        elif line.startswith('+') and not line.startswith('+++') and current_file and new_line:
+            changed[current_file].add(new_line)
+            new_line += 1
+        elif not line.startswith('-') and not line.startswith('@@') and current_file and new_line:
+            new_line += 1
+    changed = {f: sorted(list(lines)) for f, lines in changed.items() if lines}
+    return changed
+
+# Example usage to generate pr-line-comments.json dynamically
+if __name__ == "__main__":
+    base_branch = 'master'
+    pr_branch = 'feature1'
+    changed = get_changed_files_and_lines(base_branch, pr_branch)
+    comments = []
+    for file, lines in changed.items():
+        for line in lines:
+            comments.append({
+                "path": file,
+                "line": line,
+                "body": f"Automated review: Please check this change on line {line} of {file}.",
+                "side": "RIGHT"
+            })
+    with open('pr-line-comments.json', 'w', encoding='utf-8') as f:
+        json.dump(comments, f, indent=2)
+    print(f"Generated pr-line-comments.json for {len(comments)} comments.")
 
 # Map file lines to diff positions
 diff_positions = get_diff_positions()

@@ -1,20 +1,14 @@
 [
   {
-    "path": "AutomatedPRReviewExtended/Demo2.cs",
+    "path": "AutomatedPRReviewExtended/Demo1.cs",
     "line": 17,
-    "body": "Consider adding logging or rethrowing the exception in the catch block.",
+    "body": "Automated review: Please check this change on line 17 of AutomatedPRReviewExtended/Demo1.cs.",
     "side": "RIGHT"
   },
   {
-    "path": "AutomatedPRReviewExtended/Demo2.cs",
-    "line": 7,
-    "body": "Method name should be PascalCase (AddNumbers).",
-    "side": "RIGHT"
-  },
-  {
-    "path": "AutomatedPRReviewExtended/Demo2.cs",
-    "line": 45,
-    "body": "This is a test comment for the newly added line to check line-level PR comments.",
+    "path": "AutomatedPRReviewExtended/Demo1.cs",
+    "line": 18,
+    "body": "Automated review: Please check this change on line 18 of AutomatedPRReviewExtended/Demo1.cs.",
     "side": "RIGHT"
   }
 ]
