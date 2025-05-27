@@ -16,6 +16,8 @@ public class demo5
             Console.WriteLine(message);
             // Added for PR review detection
             Console.WriteLine("Automated PR review detection line.");
+            // Another new line for PR review detection
+            Console.WriteLine("Another PR review detection line.");
         }
         catch (Exception ex)
         {
