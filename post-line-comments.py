@@ -30,26 +30,39 @@ headers = {
 
 def get_diff_positions():
     """Parse the PR diff to map file lines to diff positions."""
-    # Ensure the PR branch exists locally
-    pr_branch = f'pull/{GITHUB_PR_NUMBER}/head'
+    # Get the base branch (master) and feature branch (feature1)
+    base_branch = 'master'
+    pr_branch = 'feature1'
+    subprocess.run(['git', 'fetch', 'origin', base_branch], check=True)
     subprocess.run(['git', 'fetch', 'origin', pr_branch], check=True)
 
-    # Use the fetched branch for the diff
-    diff_output = subprocess.check_output(['git', 'diff', '--unified=0', f'FETCH_HEAD']).decode('utf-8')
+    # Use the remote branches for the diff
+    diff_output = subprocess.check_output(['git', 'diff', '--unified=0', f'origin/{base_branch}...origin/{pr_branch}']).decode('utf-8')
     diff_positions = {}
     current_file = None
+    old_line = None
+    new_line = None
+    position = 0
 
     for line in diff_output.splitlines():
         if line.startswith('+++ b/'):
             current_file = line[6:]
             diff_positions[current_file] = {}
+            position = 0
         elif line.startswith('@@') and current_file:
-            # Extract line numbers from the diff hunk header
-            hunk_info = line.split(' ')[2]
-            start_line = int(hunk_info.split(',')[0].lstrip('+'))
-            for i, diff_line in enumerate(diff_output.splitlines()):
-                if diff_line.startswith('+') and not diff_line.startswith('+++'):
-                    diff_positions[current_file][start_line + i] = i
+            # Example: @@ -10,0 +11,3 @@
+            hunk_header = line.split(' ')
+            new_file_info = hunk_header[2]  # e.g., +11,3
+            new_line = int(new_file_info.split(',')[0].lstrip('+'))
+            position = 0
+        elif line.startswith('+') and not line.startswith('+++') and current_file:
+            diff_positions[current_file][new_line] = position + 1
+            new_line += 1
+            position += 1
+        elif not line.startswith('-') and not line.startswith('@@') and current_file:
+            if new_line is not None:
+                new_line += 1
+            position += 1
 
     return diff_positions
 
