@@ -39,5 +39,7 @@ public class Demo2 // Already PascalCase
     {
         Console.WriteLine("This is a new method for testing line-level comments.");
         Console.WriteLine("Additional functionality added.");
+        // This line is newly added for PR diff detection
+        Console.WriteLine("Line-level comment detection test.");
     }
 }
