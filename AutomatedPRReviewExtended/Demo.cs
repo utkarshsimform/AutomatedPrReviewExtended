@@ -1,14 +1,13 @@
 using System;
 
 // This file is for PR review demo and intentionally contains issues
-public class demo // not PascalCase
+public class Demo // Renamed to PascalCase
 {
     // TODO: Refactor this method before merging
-    public void printmessage() // not PascalCase
+    public void PrintMessage() // Renamed to PascalCase
     {
-        string Message = null; // not camelCase
-        string unusedVariable = "This variable is not used"; // Unused variable
-        Console.WriteLine(Message.ToString()); // Possible NullReferenceException
+        string message = ""; // Renamed to camelCase and initialized
+        Console.WriteLine(message); // Removed possible null dereference
         // int x = 5;
     }
 }
